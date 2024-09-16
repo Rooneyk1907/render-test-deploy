@@ -6,9 +6,6 @@ mongoose.set('strictQuery', false)
 const url = process.env.MONGODB_URI
 
 const phoneValidator = (number) => {
-	console.log('number[2]', number[2])
-	console.log('number[3]', number[3])
-	console.log('number.split(-).length', number.split('-').length)
 	if (
 		number.length > 8 &&
 		(number[2] === '-' || number[3] === '-') &&
@@ -22,7 +19,7 @@ const phoneValidator = (number) => {
 	}
 }
 
-console.log('connecting to', url)
+console.log('connecting to MongoDB')
 
 mongoose
 	.connect(url)
